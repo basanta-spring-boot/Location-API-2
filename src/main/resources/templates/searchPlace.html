@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>SEARCH-PLACCE-API</title>
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<style type="text/css">
+body {
+	background: url("../images/5.jpg");
+	background-size: cover;
+}
+</style>
+</head>
+<body>
+	<h1 class="register-title">Search-Nearest-API</h1>
+	<form class="register" action="/GMap/searchNearestPlace">
+		<input type="text" class="register-input"
+			placeholder="Search Type(Restaurant,shop)" name="searchType" /> <input
+			type="text" class="register-input" placeholder="Location(State,City)"
+			name="location" /> <input type="submit" value="Search Place Details"
+			class="register-button" />
+	</form>
+
+</body>
+</html>

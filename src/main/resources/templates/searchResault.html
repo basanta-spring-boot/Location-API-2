@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>SEARCH-PLACCE-API</title>
+<link rel="stylesheet" th:href="@{/css/default.css}" />
+</head>
+<body>
+	<h2 th:text="${errorMessage}" style="color: red; font-weight: bold;"
+		align="center"></h2>
+	<h1 th:text="${message}" style="color: black; font-weight: bold;"
+		align="center"></h1>
+	<p th:text="'Total Matches Found : '+${matchesCount}"
+		style="color: blue; font-weight: bold;" align="center"></p>
+	<div align="center">
+		<a href="/GMap/generatePDF" class="button">Generate-PDF</a>
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Types</th>
+				<th>Rating</th>
+				<th>Venu Details</th>
+				<th>More Info</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="response : ${searchResponses}">
+				<td th:text="${response.name}">Name</td>
+				<td th:text="${response.types}">Types</td>
+				<td th:text="${response.rating}">Rating</td>
+				<td th:text="${response.location}">Location</td>
+				<td><a th:href="${response.moreInfoLink}">Link</a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
